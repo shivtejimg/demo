@@ -1,0 +1,360 @@
+// navbar start
+.navbar {
+    & .navlogo {
+        height: 40px;
+        @include sm {
+            height: 45px;
+        }
+        @include md {
+            height: 50px;
+        }
+        @include lg {
+            height: 55px;
+        }
+    }
+    & .menubtn {
+        height: 18px;
+        width: 18px;
+        @include sm {
+            height: 19px;
+            width: 19px;
+        }
+        & img {
+        }
+    }
+    & .navoffcanvas {
+        width: 300px;
+        & .offcanvaslogo {
+            height: 30px;
+        }
+        & .btnclose {
+            background: none;
+            height:12px;
+            width: 12px;
+            @include sm {
+                height:13px;
+                width: 13px;
+            }
+            @include md {
+                height:14px;
+                width: 14px;
+            }
+        }
+        & .navbaritem {
+            gap: 0;
+            @include sm {
+                gap: 5px;
+            }
+            @include xl {
+                gap: 25px;
+            }
+            @include xxl {
+                gap: 25px;
+            }
+            & .navbarlink {
+                font-size: 13px;
+                color: $black;
+                font-weight: 700 !important;
+                text-transform: uppercase;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: $theme1;
+                }
+                &.active {
+                    color: $theme1;
+                }
+                @include sm {
+                    font-size: 12px;
+                }
+                @include md {
+                    font-size: 14px;
+                }
+                @include xl {
+                }
+                @include xxl {
+                }
+            }
+        }
+    }
+    &.activenavbar {
+        background-color: $white;
+        top: 0;
+        position: fixed;
+        animation: fixedAnim 1s forwards;
+        -webkit-box-shadow: 0 12px 6px rgba($black, 0.06);
+        -moz-box-shadow: 0 12px 6px rgba($black, 0.06);
+        box-shadow: 0 6px 6px rgba($black, 0.06);
+        & .menubtn {
+            & img {
+                filter: none;
+            }
+        }
+        @keyframes fixedAnim {
+            from {
+                top: -50px;
+            }
+        
+            to {
+                top: 0;
+            }
+        }
+        @include lg {
+            .navbaritem {
+                & .navbarlink {
+                    color: $black;
+                    &:hover {
+                        color: $warning;
+                    }
+                    &.active {
+                        color: $warning;
+                    }
+                }
+            }
+            .commonbtn {
+                background-color: $black;
+                color: $white;
+            }
+        }
+        & .commonbtn {
+            background-color: $black;
+            color: $white;
+        }
+    }
+    & .navbarimages {
+        flex-grow: 1;
+        margin-right: 10px;
+        @include sm {
+            margin-right: 15px;
+        }
+        @include xl {
+            flex-grow: 0;
+            margin-right: 0;
+        }
+        & .navimg {
+            height: 30px;
+            & img{
+                object-fit: contain;
+            }
+            @include sm {
+            }
+            @include md {
+            }
+            @include lg {
+                height: 30px;
+            }
+        }
+    }
+}
+// navbar end
+
+// search offcanvas start 
+.searchoffcanvas {
+    height: 115px !important;
+    & .btnclose {
+        background: none;
+        height: 12px;
+        width: 12px;
+    }
+}
+.searchinput {
+    height: 37px;
+    @include sm {
+        height: 40px;
+    }
+    & .searchinput {
+        font-size: 13px;
+        // font-weight: 500;
+        &::placeholder {
+            font-size: 13px;
+            // font-weight: 500;
+            @include sm {
+                font-size: 14px;
+            }
+        }
+        @include sm {
+            font-size: 14px;
+        }
+    }
+    // & .searchbtn {
+    //     font-size: 13px;
+    //     background-color: $theme1;
+    //     color: $white;
+    //     padding: 0 20px;
+    //     &:hover {
+    //         background-color: lighten($theme1, 10);
+    //     }
+    //     @include sm {
+    //         font-size: 14px;
+    //         padding: 0 24px;
+    //     }
+    // }
+    & .searchbtn {
+        width: 35px;
+        padding: 10px;
+        color: $black;
+        @include sm {
+            width: 37px;
+            padding: 11px;
+        }
+        @include md {
+            width: 40px;
+            padding: 12px;
+        }
+    }
+}
+.copyrytTxt{
+    font-size: 12px;
+    font-weight: 500;
+    color: $white;
+    opacity: 0.95;
+    & span{
+        font-size: 12px;
+    }
+}
+// search offcanvas end
+
+
+// footer start 
+.footer {
+    & .footerlogo {
+        height: 45px;
+    }
+    & .footerIcons{
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+        filter: invert(1)brightness(1000);
+        &.footerIcons1{
+            height: 15px;
+        }
+    }
+    & .socialmedia {
+        & .socialicon {
+            height: 35px;
+            width: 35px;
+            padding: 10px;
+            background-color: $theme3;
+            // border: 1px solid $theme1;
+            // &::before {
+            //     content: '';
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     height:100%;
+            //     width: 100%;
+            //     background-color: $theme1;
+            //     transform: scale(0);
+            //     transition: all 0.3s ease-in-out;
+            // }
+            & img {
+                transition: all 0.3s ease-in-out;
+                filter: invert(1);
+            }
+            &:hover {
+                & img {
+                    animation: toBottomFromTop 1s forwards;
+                }
+                &::before {
+                    transform: scale(1);
+                }
+            }
+            @keyframes toBottomFromTop {
+                49% {
+                    -webkit-transform: translateY(-100%);
+                    transform: translateY(-100%);
+                }
+                50% {
+                    opacity: 0;
+                    -webkit-transform: translateY(100%);
+                    transform: translateY(100%);
+                }
+                51% {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    & .address{ 
+        color: $white !important; 
+        opacity: 0.95;  
+        line-height: 1.6;
+        font-size: 14px;
+        @include sm{
+        }
+        @include md{
+        }
+        @include lg{
+            font-size: 16px;    
+        }
+        @include xl{
+            
+        }
+        @include xxl{
+            
+        }
+    }
+    // & .phone{
+    //         font-size: 16px;
+    //         font-weight: 600; 
+    //         color: $theme3;   
+    //         line-height: normal;
+    // }
+    // & .email{
+    //         font-size: 16px;
+    //         font-weight: 600; 
+    //         color: $theme3;   
+    //         line-height: normal;
+    // }
+    & .footerheading {
+        font-size: 18px;
+        line-height: normal;
+        opacity: 0.85;  
+        margin-bottom: 15px;
+        color: $white;
+    }
+    & .footerlink {
+        font-size: 14px;
+        color: $white;
+        transition: all 0.3s ease-in-out;
+        opacity: 0.95;
+        line-height: 1.6;
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     left: -14px;
+        //     height: 1.5px;
+        //     width:0 ;
+        //     background-color: $theme1;
+        //     transition: all 0.3s ease-in-out;
+        // }
+        @include sm{
+        }
+        @include md{
+        }
+        @include lg{
+            font-size: 16px;    
+            font-weight: 600;
+        }
+        @include xl{
+            
+        }
+        @include xxl{
+            
+        }
+        &:hover {
+            &::before {
+                width: 15px;
+            }
+            transform: translateX(8px);
+            color: $theme3;
+        }
+    }
+    & .contactlink {
+        & .contacticon{
+            height: 15px;
+        }
+    }
+}
+// footer end
